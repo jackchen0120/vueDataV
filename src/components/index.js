@@ -1,8 +1,8 @@
 import bgAnimation from './bgAnimation'
 
 const components = {
-  bgAnimation,
-  // particles
+  bgAnimation
+  
 };
 
 const install = (Vue = {}) => {
@@ -11,11 +11,11 @@ const install = (Vue = {}) => {
     Vue.component(components[component].name, components[component]);
   });
 
-  Vue.prototype.$notice = Notification;
   install.installed = true;
 };
 
 install.installed = false;
+
 if (typeof window !== "undefined" && window.Vue) {
   install(window.Vue);
   install.installed = true;

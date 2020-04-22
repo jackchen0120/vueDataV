@@ -15,7 +15,7 @@
 	            />
             </div>
             <div class="item">
-            	<i class="iconfont icon-secret"></i>
+            	<i class="iconfont icon-password"></i>
 	            <input
 	              autocomplete="off"
 	              type="password"
@@ -73,7 +73,8 @@ export default {
   data() {
   	return {
   		userName: 'admin',
-  		userPwd: '123456'
+  		userPwd: '123456',
+      showModal: false
   	}
   },
   computed: {
@@ -86,14 +87,23 @@ export default {
 
   },
   methods: {
-  	login() {
-  		console.log('login')
+  	login () {
+  		if (this.userName == 'admin' && this.userPwd == '123456') {
+         this.$router.push({
+          path: '/home'
+         })
+      } else {
+        this.$Toast({
+          content: '请输入正确的用户名和密码',
+          type: 'error'
+        })
+      }
   	}
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .login-container {
 	.layer {
 	  position: absolute;

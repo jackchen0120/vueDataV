@@ -1,7 +1,9 @@
 import bgAnimation from './bgAnimation'
+import modal from './modal'
 
 const components = {
-  bgAnimation
+  bgAnimation,
+  modal
   
 };
 

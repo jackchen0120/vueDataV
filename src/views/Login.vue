@@ -39,7 +39,6 @@
         </div>
     </div>
 
-    <div class="layer">
 	    <vue-particles 
 	      color="#6495ED"
 	      :particleOpacity="0.7"
@@ -58,9 +57,15 @@
 	      clickMode="push"
 	    >
 	    </vue-particles>
-    </div>
 
     <bgAnimation />
+
+    <modal 
+      title="提示" 
+      :content="modalContent"
+      :visible.sync="visible" 
+      @confirm="confirm">
+    </modal>
 
   </div>
 </template>
@@ -74,7 +79,8 @@ export default {
   	return {
   		userName: 'admin',
   		userPwd: '123456',
-      showModal: false
+      visible: true,
+      modalContent: '这是一段信息'
   	}
   },
   computed: {
@@ -95,10 +101,15 @@ export default {
       } else {
         this.$Toast({
           content: '请输入正确的用户名和密码',
-          type: 'error'
+          type: 'error',
+          // hasClose: true
         })
       }
-  	}
+  	},
+    confirm () {
+      this.visible = false;
+      console.log('点击确定')
+    }
   }
 }
 </script>

@@ -6,7 +6,7 @@
           <i class="iconfont" :class="'icon-' + type"></i>
           <span>{{ content }}</span>
         </div>
-        <!-- <i v-if="hasClose" class="iconfont icon-close close" @click="visible = false"></i> -->
+        <i v-if="hasClose" class="iconfont icon-close close" @click="visible = false"></i>
       </div>
     </div>
   </transition>
@@ -22,7 +22,7 @@ export default {
       time: 3000,
       visible: false,
       type: 'error',  //四种类型：info, success, warning, error
-      hasClose: true,     
+      hasClose: false,     
     }
   },
   mounted() {
@@ -61,7 +61,7 @@ export default {
     width: 340px;
     padding: 20px;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center; 

@@ -19,12 +19,12 @@ Vue.config.productionTip = false
 Vue.prototype.$Axios = Axios
 Vue.prototype.$Toast = Toast
 
-$(window).resize(() => {
-  let width = 1920; // 设计图尺寸
-  let vW = document.documentElement.clientWidth; // 窗口宽度
-  let rem = vW * 100 / width; 
-  document.documentElement.style.fontSize = rem + 'px';
-});
+// $(window).resize(() => {
+//   let width = 1920; // 设计图尺寸
+//   let vW = document.documentElement.clientWidth; // 窗口宽度
+//   let rem = vW * 100 / width; 
+//   document.documentElement.style.fontSize = rem + 'px';
+// });
 
 new Vue({
   router,

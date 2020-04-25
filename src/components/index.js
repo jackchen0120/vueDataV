@@ -1,9 +1,11 @@
 import bgAnimation from './bgAnimation'
 import modal from './modal'
+import sinan from './sinan'
 
 const components = {
   bgAnimation,
-  modal
+  modal,
+  sinan
   
 };
 

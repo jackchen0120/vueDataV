@@ -79,7 +79,7 @@ export default {
   	return {
   		userName: 'admin',
   		userPwd: '123456',
-      visible: true,
+      visible: false,
       modalContent: '这是一段信息'
   	}
   },

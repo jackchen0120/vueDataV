@@ -1,0 +1,107 @@
+/*动画组件通用样式*/
+.wrap-container {
+  position: absolute;
+  overflow: hidden;
+  display: block;
+  cursor: default;
+  z-index: 0;
+  left: 0; 
+  top: 0; 
+  width: 100%; 
+  height: 100%;
+}
+
+%sn-container-before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  width: 5px;
+  height: 5px;
+  border-color: #0a6aff;
+  border-style: solid;
+  border-top-width: 2px;
+  border-bottom-width: 0;
+}
+.sn-container {
+  position: absolute;
+  width: 500px; 
+  height: 550px;
+  border: 2px solid rgba(92,255,255,0.1);
+  background: rgba(10,106,255,0.1) url(../../assets/img/wg.png) repeat 50% 50% !important;
+  background-blend-mode: screen;
+  overflow: visible;
+  &:before {
+    @extend %sn-container-before;
+    left: -2px;
+    border-left-width: 2px;
+    border-right-width: 0;
+  }
+  &:after {
+    @extend %sn-container-before;
+    right: -2px;
+    border-left-width: 0;
+    border-right-width: 2px;
+  }
+
+  %sn-content-before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    width: 5px;
+    height: 5px;
+    border-color: #0a6aff;
+    border-style: solid;
+    border-top-width: 0;
+    border-bottom-width: 2px;
+  }
+  .sn-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .sn-title {
+      position: absolute;
+      height: 26px;
+      font-size: 16px;
+      color: #00c2ff;
+      line-height: 26px;
+      padding: 0 0 0 20px;
+      left: 10px;
+      right: 10px;
+      top: 10px;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -7px;
+        width: 14px;
+        height: 14px;
+        background: url(../../assets/img/sn-title.png) no-repeat 0% 0%;
+      }
+    }
+    &:before {
+      @extend %sn-content-before;
+      left: -2px;
+      border-left-width: 2px;
+      border-right-width: 0;
+    }
+    &:after {
+      @extend %sn-content-before;
+      right: -2px;
+      border-left-width: 0;
+      border-right-width: 2px;
+    }
+
+    .sn-body {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      
+    }
+    
+  }
+}

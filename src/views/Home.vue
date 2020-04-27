@@ -5,7 +5,10 @@
       
       <sinan />
 
-    </div>
+      <rimian />
+
+      <pyramid />
+
     </div>
     
   </div>

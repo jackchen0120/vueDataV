@@ -9,6 +9,7 @@ import Toast from './components/toast'
 import $ from 'jquery'
 
 import '@/assets/styles/base.scss'
+import '@/assets/styles/common.scss'
 import '@/assets/iconfont/iconfont.css'
 
 Vue.use(vueParticles)

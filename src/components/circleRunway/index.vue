@@ -1,11 +1,11 @@
 <template>
-  <!-- 日冕排名图 -->
+  <!-- 环形跑道图 -->
   <div class="wrap-container sn-container"> 
     <div class="sn-content"> 
-      <div class="sn-title">日冕排名图</div> 
+      <div class="sn-title">环形跑道图</div> 
       <div class="sn-body"> 
-        <div class="wrap-container"> 
-          <div class="chartsdom" id="chart_rm"></div> 
+        <div class="wrap-container" style="height: 90%"> 
+          <canvas width="496" height="455" style="width: 496px; height: 455px;"></canvas> 
         </div> 
       </div> 
     </div>   
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "rimian",
+  name: "circleRunway",
   data() {
     return {
       

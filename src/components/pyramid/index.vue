@@ -5,7 +5,7 @@
     <div class="back_img"></div> 
     <div class="back_img1"></div> 
     <div class="back_img2"></div>
-    <ul class="first"> 
+    <ul :class="{first: index == 0, second: index == 1, third: index == 2, four: index == 3}" v-for="(item, index) in arrData"> 
       <li></li>
       <li></li>
       <li></li> 
@@ -13,30 +13,6 @@
       <li></li>
       <li></li> 
     </ul> 
-    <ul class="seconed"> 
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li> 
-    </ul> 
-    <ul class="third"> 
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li> 
-    </ul> 
-    <ul class="four"> 
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li> 
-    </ul>
 
     <div class="detail" :class="`detail_${index + 1}`" v-for="(item, index) in arrData" :key="index"> 
       <div class="detail_txt" :class="`detail_txt${index + 1}`"> 
@@ -79,11 +55,17 @@ export default {
         post: '项目经理',
         number: 66
       }],
-      color: ['#45fed4', '#616cff', '#f1e04f', '#dbfe73']
+      color: ['#45fed4', '#84a9ef', '#f1e04f', '#dbfe73'],
+      totalNum: [],
+      sum: 0
       
     }
   },
   mounted() {
+    this.arrData.forEach((v, i) => {
+      this.totalNum.push(v.number);
+    })
+    this.sum = this.totalNum.reduce((prev, next, index, array) => prev + next)
     this.arrData.map((v, i) => {
       v.color = this.color[i];
       this.getEchart(`chart_${i + 1}`, v);
@@ -91,14 +73,16 @@ export default {
   },
   methods: {
     getEchart(dom, data) {
+      let sum = (Math.round( (data.number / this.sum) * 10000 ) / 100).toFixed(1);
       let myChart = echarts.init(document.getElementById(dom));
       this.option = {
-          color: data.color,
+          color: [data.color, '#333'],
           series: [
             {
               name: '访问来源',
               type: 'pie',
-              radius: ['90%', '95%'],
+              radius: ['92%', '100%'],
+              clockWise: false,
               avoidLabelOverlap: false,
               hoverAnimation: false,
               label: {
@@ -108,7 +92,7 @@ export default {
                   textStyle: {
                       fontSize: 14
                   },
-                  formatter: '{b}\n{c}%'
+                  formatter: '{c}%'
                 }
               },
               labelLine: {
@@ -116,11 +100,20 @@ export default {
               },
               data: [
                 {
-                  value: data.number, 
+                  value: sum, 
                   name: '',
                   label: {
                     normal: {
                       show: true
+                    }
+                  }
+                },
+                {
+                  value: (100 - sum), 
+                  name: '',
+                  label: {
+                    normal: {
+                      show: false
                     }
                   }
                 }
@@ -128,9 +121,11 @@ export default {
             }
           ]
       };
-      if (this.option && typeof this.option === "object") {
-        myChart.setOption(this.option, true);
-      }
+      myChart.setOption(this.option, true);
+
+      window.addEventListener('resize', () => {
+        myChart.resize();
+      });
     }
   },
   beforeDestroy() {
@@ -243,7 +238,7 @@ export default {
     }
   }
 
-  .seconed {
+  .second {
     list-style-type: none;
     left: 261px;
     top: 65px;
@@ -446,7 +441,7 @@ export default {
           float: right;
         }
         .f_div {
-          color: #2bb5ff;
+          color: #84a9ef;
           font-size: 16px;
           &.aharrow_down {
             &:before {
@@ -582,7 +577,7 @@ export default {
       &.arrow_2 {
         width: 20px;
         height: 1px;
-        background: #5f75ff;
+        background: #84a9ef;
         transform: rotate(-30deg);
         display: inline-block;
         margin-top: 40px;
@@ -591,7 +586,7 @@ export default {
           content: '';
           width: 50px;
           height: 1px;
-          background: #5f75ff;
+          background: #84a9ef;
           display: inline-block;
           transform: rotate(30deg);
           position: absolute;
@@ -602,12 +597,12 @@ export default {
           content: '';
           width: 5px;
           height: 5px;
-          background: #5f75ff;
+          background: #84a9ef;
           display: inline-block;
           border-radius: 50%;
           position: absolute;
           top: -2px;
-          box-shadow: 0px 0px 5px 1px #5f75ff;
+          box-shadow: 0px 0px 5px 1px #84a9ef;
           left: 17px;
         }
       }

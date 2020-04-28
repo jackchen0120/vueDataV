@@ -1,11 +1,11 @@
 <template>
-  <!-- 日冕排名图 -->
+  <!-- 扫描半径图 -->
   <div class="wrap-container sn-container"> 
     <div class="sn-content"> 
-      <div class="sn-title">日冕排名图</div> 
+      <div class="sn-title">扫描半径图</div> 
       <div class="sn-body"> 
         <div class="wrap-container"> 
-          <div class="chartsdom" id="chart_rm"></div> 
+          <div class="chartsdom" id="chart_scan"></div>
         </div> 
       </div> 
     </div>   
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "rimian",
+  name: "scanRadius",
   data() {
     return {
       

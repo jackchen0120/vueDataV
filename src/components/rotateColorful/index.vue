@@ -1,11 +1,11 @@
 <template>
-  <!-- 日冕排名图 -->
+  <!-- 旋转多彩图 -->
   <div class="wrap-container sn-container"> 
     <div class="sn-content"> 
-      <div class="sn-title">日冕排名图</div> 
+      <div class="sn-title">旋转多彩图</div> 
       <div class="sn-body"> 
         <div class="wrap-container"> 
-          <div class="chartsdom" id="chart_rm"></div> 
+          <div class="chartsdom" id="chart_rotate"></div> 
         </div> 
       </div> 
     </div>   
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "rimian",
+  name: "rotateColorful",
   data() {
     return {
       

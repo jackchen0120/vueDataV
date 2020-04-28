@@ -4,10 +4,13 @@
       <div class="top"></div>
       
       <sinan />
-
       <rimian />
-
       <pyramid />
+
+      <scrollArc />
+      <szBar />
+
+      <ringPin />
 
     </div>
     

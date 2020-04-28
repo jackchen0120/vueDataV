@@ -64,31 +64,31 @@ export default {
         itemNum: 258,
         dataItem: 1288,
         dataSize: 12306,
-        workUnit: '税务局'
+        workUnit: 'JS'
       },{
         id: 2,
         itemNum: 568,
         dataItem: 5623,
         dataSize: 12306,
-        workUnit: '国土局'
+        workUnit: 'Nodejs'
       },{
         id: 3,
         itemNum: 208,
         dataItem: 1755,
         dataSize: 12043,
-        workUnit: '农业局'
+        workUnit: 'Vuejs'
       },{
         id: 4,
         itemNum: 358,
         dataItem: 1812,
         dataSize: 12306,
-        workUnit: '环保局'
+        workUnit: 'CSS3'
       },{
         id: 5,
         itemNum: 128,
         dataItem: 4718,
         dataSize: 12580,
-        workUnit: '公安局'
+        workUnit: 'jQuery'
       }]
     }
   },

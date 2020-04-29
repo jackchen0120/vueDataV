@@ -1,5 +1,10 @@
+<!--
+ 描述: 司南排名图
+ 作者: Jack Chen
+ 日期: 2020-04-18
+-->
+
 <template>
-  <!-- 司南排名图 -->
   <div class="wrap-container sn-container"> 
     <div class="sn-content"> 
       <div class="sn-title">司南排名图</div> 

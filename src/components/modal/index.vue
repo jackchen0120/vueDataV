@@ -1,3 +1,9 @@
+<!--
+ 描述: 自定义全局模态框
+ 作者: Jack Chen
+ 日期: 2020-04-18
+-->
+
 <template>
   <transition name="fade">
     <div class="modal-backdrop" v-if="visible">

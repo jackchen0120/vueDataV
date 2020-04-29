@@ -1,3 +1,9 @@
+/*
+ * 描述: 消息提示框组件封装
+ * 作者: Jack Chen
+ * 日期: 2020-04-18
+ */
+
 import Vue from 'vue'
 import Toast from './index.vue'
   

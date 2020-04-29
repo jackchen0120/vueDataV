@@ -1,4 +1,9 @@
 @charset "utf-8";
+/*
+ *  描述: 基本样式
+ *  作者：Jack Chen
+ *  时间：2020-04-18
+ */
 
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { 
   margin:0; padding:0; 
@@ -44,8 +49,8 @@ a {
   -webkit-backface-visibility: hidden;
 }
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 10px;
+  height: 10px;
 }
 ::-webkit-scrollbar-track-piece {
   background-color: rgba(0, 0, 0, 0.2);

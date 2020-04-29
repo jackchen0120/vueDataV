@@ -1,5 +1,10 @@
+<!--
+ 描述: 金字塔动画
+ 作者: Jack Chen
+ 日期: 2020-04-19
+-->
+
 <template>
-  <!-- 金字塔数据 -->
   <div class="wrap-container trigle"> 
     <div class="back_img3"></div> 
     <div class="back_img"></div> 

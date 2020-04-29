@@ -1,3 +1,9 @@
+/*
+ * 描述: 封装组件库
+ * 作者: Jack Chen
+ * 日期: 2020-04-18
+ */
+
 import bgAnimation from './bgAnimation' // 登录界面背景图动画
 import modal from './modal' // 自定义全局模态框
 import sinan from './sinan' // 司南排名图

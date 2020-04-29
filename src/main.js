@@ -6,7 +6,6 @@ import store from './store'
 import vueParticles from 'vue-particles'
 import Vcomp from './components/index'
 import Toast from './components/toast'
-// import $ from 'jquery'
 
 import '@/assets/styles/base.scss'
 import '@/assets/styles/common.scss'

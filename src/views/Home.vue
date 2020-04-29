@@ -1,3 +1,9 @@
+<!--
+ 描述: 酷屏首页模板
+ 作者: Jack Chen
+ 日期: 2020-04-29
+-->
+
 <template>
   <div class="home-container">
   	<div class="wrap" ref="editor">
@@ -11,6 +17,9 @@
       <szBar />
 
       <ringPin />
+      <circleRunway />
+
+      <div class="divider"></div>
 
     </div>
     
@@ -71,6 +80,13 @@ export default {
       background-position: 65% 0;
       border: none; 
       overflow: hidden;
+    }
+    .divider {
+      position: absolute;
+      left: 50px;
+      top: 2000px;
+      width: 90%;
+      height: 50px;
     }
 
   }

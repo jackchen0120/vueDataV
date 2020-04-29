@@ -1,5 +1,10 @@
+<!--
+ 描述: 滚动弧形线
+ 作者: Jack Chen
+ 日期: 2020-04-20
+-->
+
 <template>
-  <!-- 滚动弧形线 -->
   <div class="wrap-container sn-container"> 
     <div class="sn-content"> 
       <div class="sn-title">滚动弧形线</div> 
@@ -40,8 +45,8 @@ export default {
                 offset: 1,
                 color: '#5d83ff'
               },{
-                  offset: 0,
-                  color: 'rgba(255, 255, 255, 0)'
+                offset: 0,
+                color: 'rgba(255, 255, 255, 0)'
               }])
             }
           },
@@ -85,8 +90,8 @@ export default {
                 offset: 0,
                 color: '#5d83ff'
               },{
-                  offset: 1,
-                  color: 'rgba(0, 0, 0, 0)'
+                offset: 1,
+                color: 'rgba(0, 0, 0, 0)'
               }]),
             }
           },

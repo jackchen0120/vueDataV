@@ -1,5 +1,10 @@
+<!--
+ 描述: 扫描半径图
+ 作者: Jack Chen
+ 日期: 2020-04-19
+-->
+
 <template>
-  <!-- 扫描半径图 -->
   <div class="wrap-container sn-container"> 
     <div class="sn-content"> 
       <div class="sn-title">扫描半径图</div> 

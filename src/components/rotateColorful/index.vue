@@ -1,5 +1,10 @@
+<!--
+ 描述: 旋转多彩图
+ 作者: Jack Chen
+ 日期: 2020-04-19
+-->
+
 <template>
-  <!-- 旋转多彩图 -->
   <div class="wrap-container sn-container"> 
     <div class="sn-content"> 
       <div class="sn-title">旋转多彩图</div> 

@@ -17,7 +17,7 @@ export default {
       n: 1,
       speed: 150,
       r: 36,
-      timer3: null
+      timer: null
     }
   },
   props:[
@@ -33,21 +33,21 @@ export default {
     this.context.scale(4, 4);
     this.cirX = 40, // this.canvas.width / 2
     this.cirY = 40, // this.canvas.height / 2
-    this.rad = Math.PI * 2 / 100;
+    this.rad = -Math.PI * 2 / 100;
     this.DreamLoading();
 
-    // this.timer3 = setInterval(() => {
-    //  this.DreamLoading();
-    // }, 6000)
+    this.timer = setInterval(() => {
+     this.DreamLoading();
+    }, 6000)
 
     document.addEventListener('visibilitychange', () => {
       this.isHidden = document.hidden;
       if (this.isHidden === false) {
-        this.timer3 = setInterval(() => {
+        this.timer = setInterval(() => {
          this.DreamLoading();
         }, 6000)
       } else {
-        clearInterval(this.timer3);
+        clearInterval(this.timer);
         this.timer3 = null;
       }
     })
@@ -66,7 +66,7 @@ export default {
       this.context.strokeStyle = "rgba(0, 114, 188, .2)";       
       this.context.lineWidth = this.lineWidth;
       // 用于绘制圆弧context.arc(x坐标，y坐标，半径，起始角度，终止角度，顺时针/逆时针)
-      this.context.arc(this.cirX, this.cirY, this.r, 0, Math.PI * 2, true);
+      this.context.arc(this.cirX, this.cirY, this.r, 0, Math.PI * 2, false);
        // 绘制边线
       this.context.stroke();      
       // this.context.restore();
@@ -90,7 +90,7 @@ export default {
       this.context.lineWidth = this.lineWidth;
       // this.context.lineCap = 'round';
       this.context.beginPath();
-      this.context.arc(this.cirX, this.cirY, this.r, 90, Math.PI / 2 + this.rad * n, false);
+      this.context.arc(this.cirX, this.cirY, this.r, -Math.PI / 2, -Math.PI / 2 + this.rad * n, true);
       this.context.stroke();
       this.context.restore();
     },
@@ -103,7 +103,7 @@ export default {
       this.writeBlue(this.n)
       // if(this.n < 100 && this.n <= 60) {
       if (this.n <= this.percent) {
-          this.n = this.n + 0.4;
+        this.n = this.n + 0.4;
       } else {
         return this.n = 0;
       }

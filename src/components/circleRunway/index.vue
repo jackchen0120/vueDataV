@@ -47,12 +47,12 @@ export default {
         ratio: '30',
         color: '#00ffff',
         classStyle: 'canvasCircle2',
-        lineWidth: 2,
+        lineWidth: 2.5,
       },{
         ratio: '20',
         color: '#f48b3b',
         classStyle: 'canvasCircle3',
-        lineWidth: 2,
+        lineWidth: 3,
       }],
       arrData: [{
         name: '阿里云',
@@ -74,7 +74,7 @@ export default {
   },
   methods: {
     getEchart() {
-      // 初始化echarts实例
+      // // 初始化echarts实例
       // let myChart = echarts.init(document.getElementById('chart_run'));
       // let itemStyle = {
       //   normal: {
@@ -202,6 +202,10 @@ export default {
   top: 1120px;
   width: 432px;
   height: 400px;
+  .chartsdom {
+    width: 100%;
+    height: 90%;
+  }
   .pd-canvas {
     position: relative; 
     overflow: hidden; 
@@ -221,17 +225,18 @@ export default {
       margin: 0; 
       border-width: 0;
       &.canvasCircle1 {
-        left: 66px;
-        top: 3px;
+        left: 60px;
+        top: 4px;
       }
       &.canvasCircle2 {
-        transform: scale(.8);
-        left: 106px;
-        top: -10px;
+        transform: scale(.78);
+        left: 52px;
+        top: -1px;
       }
       &.canvasCircle3 {
-        left: 154px;
-        top: 43px;
+        transform: scale(.6);
+        left: 44px;
+        top: -7px;
       }
     }
   }

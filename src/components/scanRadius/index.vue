@@ -11,22 +11,21 @@
       <div class="sn-body"> 
         <div class="wrap-container"> 
           <div class="chartsdom" id="chart_scan"></div>
-          <div class="chartsdom" id="chart_scan2"></div>
           <div class="box">
             <div class="nodetext text0">
-              <span>工作量证明</span>
+              <span>区块链</span>
             </div>
             <div class="nodetext text1">
-              <span>权益证明</span>
+              <span>人工智能</span>
             </div>
             <div class="nodetext text2">
-              <span>股权授权证明</span>
+              <span>大数据</span>
             </div>
             <div class="nodetext text3">
-              <span>容量证明</span>
+              <span>云计算</span>
             </div>
             <div class="nodetext text4">
-              <span>第五代轻量证明</span>
+              <span>移动互联网</span>
             </div>
           </div>
         </div> 
@@ -48,153 +47,10 @@ export default {
   },
   mounted() {
     this.getEchart();
-    this.getEchart2();
   },
   methods: {
     getEchart() {
       let myChart = echarts.init(document.getElementById('chart_scan'));
-      let arrData = [{
-        value: 10,
-        itemStyle: {
-          normal: {
-            color: 'rgba(0, 0, 0, 0)',
-            borderColor: 'rgba(17, 93, 217, 0.4)',
-            borderWidth: 1
-          }
-        }
-      },{
-        value: 10,
-        itemStyle: {
-          normal: {
-            color: 'rgba(0, 0, 0, 0)'
-          }
-        }
-      }]
-      this.option = {
-        color: ['#05bbdf', '#1170e1', '#1b40e3', '#00c86c', '#5e51e3'],
-        series: [{
-          name: '2020年',
-          type: 'pie',
-          clockWise: false,
-          startAngle: 0,
-          hoverAnimation: false,
-          radius: ['90%', '90%'],
-          center: ['50%', '50%'],
-          label: {
-            normal: {
-              show: false
-            },
-          },
-          labelLine: {
-            normal: {
-              show: false
-            }
-          },
-          data: [{
-            value: 10,
-            itemStyle: {
-              normal: {
-                color: 'rgba(0, 0, 0, 0)',
-                borderColor: 'rgba(21, 103, 214, 1)',
-                borderWidth: 2,
-                borderType: 'dashed'
-              }
-            }
-          },{
-            value: 10,
-            itemStyle: {
-              normal: {
-                color: 'rgba(0, 0, 0, 0)'
-              }
-            }
-          }]
-        },{
-          name: '2019年',
-          type: 'pie',
-          clockWise: false,
-          startAngle: 0,
-          hoverAnimation: false,
-          radius: ['70%', '70%'],
-          center: ['50%', '50%'],
-          label: {
-            normal: {
-              show: false
-            },
-          },
-          labelLine: {
-            normal: {
-              show: false
-            }
-          },
-          data: arrData
-        },{
-          name: '2018年',
-          type: 'pie',
-          clockWise: false,
-          startAngle: 0,
-          hoverAnimation: false,
-          radius: ['50%', '50%'],
-          center: ['50%', '50%'],
-          label: {
-            normal: {
-              show: false
-            },
-          },
-          labelLine: {
-            normal: {
-              show: false
-            }
-          },
-          data: arrData
-        },{
-          name: '2017年',
-          type: 'pie',
-          clockWise: false,
-          startAngle: 0,
-          hoverAnimation: false,
-          radius: ['30%', '30%'],
-          center: ['50%', '50%'],
-          label: {
-            normal: {
-              show: false
-            },
-          },
-          labelLine: {
-            normal: {
-              show: false
-            }
-          },
-          data: arrData
-        },{
-          name: '2016年',
-          type: 'pie',
-          clockWise: false,
-          startAngle: 0,
-          hoverAnimation: false,
-          radius: ['10%', '10%'],
-          center: ['50%', '50%'],
-          label: {
-            normal: {
-              show: false
-            },
-          },
-          labelLine: {
-            normal: {
-              show: false
-            }
-          },
-          data: arrData
-        }]
-      }
-
-      myChart.setOption(this.option, true);
-
-      window.addEventListener('resize', () => {
-        myChart.resize();
-      });
-    },
-    getEchart2() {
-      let myChart = echarts.init(document.getElementById('chart_scan2'));
       let arrData = [{
         value: 3, 
         name: '区块链',
@@ -281,7 +137,30 @@ export default {
         }
       });
 
-      this.option2 = {
+      let arrData2 = [{
+        value: 10,
+        itemStyle: {
+          normal: {
+            color: 'rgba(0, 0, 0, 0)',
+            borderColor: 'rgba(17, 93, 217, 0.4)',
+            borderWidth: 1
+          }
+        }
+      },{
+        value: 10,
+        itemStyle: {
+          normal: {
+            color: 'rgba(0, 0, 0, 0)'
+          }
+        }
+      }]
+
+      let tooltip = {
+        formatter: ' ',
+        backgroundColor: 'rgba(0, 0, 0, 0)'
+      }
+
+      this.option = {
         label: {
           normal: {
             show: false
@@ -292,6 +171,9 @@ export default {
             show: false
           }
         },
+        tooltip: {
+          trigger: 'item' 
+        },
         series: [{
           name: '现代技术',
           type: 'pie',
@@ -299,6 +181,10 @@ export default {
           radius: '190%',
           center: ['50%', '50%'],
           roseType: 'radius',
+          z: 0,
+          tooltip: {
+            formatter: '{b0}: {c0} ({d0}%)' 
+          },
           label: {
             show: false
           },
@@ -308,10 +194,127 @@ export default {
             }
           },
           data: arrData
+        },{
+          name: '2020年',
+          type: 'pie',
+          clockWise: false,
+          startAngle: 0,
+          hoverAnimation: false,
+          radius: ['90%', '90%'],
+          center: ['50%', '50%'],
+          tooltip: tooltip,
+          label: {
+            normal: {
+              show: false
+            },
+          },
+          labelLine: {
+            normal: {
+              show: false
+            }
+          },
+          data: [{
+            value: 10,
+            itemStyle: {
+              normal: {
+                color: 'rgba(0, 0, 0, 0)',
+                borderColor: 'rgba(21, 103, 214, 1)',
+                borderWidth: 2,
+                borderType: 'dashed'
+              }
+            }
+          },{
+            value: 10,
+            itemStyle: {
+              normal: {
+                color: 'rgba(0, 0, 0, 0)'
+              }
+            }
+          }]
+        },{
+          name: '2019年',
+          type: 'pie',
+          clockWise: false,
+          startAngle: 0,
+          hoverAnimation: false,
+          radius: ['70%', '70%'],
+          center: ['50%', '50%'],
+          tooltip: tooltip,
+          label: {
+            normal: {
+              show: false
+            },
+          },
+          labelLine: {
+            normal: {
+              show: false
+            }
+          },
+          data: arrData2
+        },{
+          name: '2018年',
+          type: 'pie',
+          clockWise: false,
+          startAngle: 0,
+          hoverAnimation: false,
+          radius: ['50%', '50%'],
+          center: ['50%', '50%'],
+          tooltip: tooltip,
+          label: {
+            normal: {
+              show: false
+            },
+          },
+          labelLine: {
+            normal: {
+              show: false
+            }
+          },
+          data: arrData2
+        },{
+          name: '2017年',
+          type: 'pie',
+          clockWise: false,
+          startAngle: 0,
+          hoverAnimation: false,
+          radius: ['30%', '30%'],
+          center: ['50%', '50%'],
+          tooltip: tooltip,
+          label: {
+            normal: {
+              show: false
+            },
+          },
+          labelLine: {
+            normal: {
+              show: false
+            }
+          },
+          data: arrData2
+        },{
+          name: '2016年',
+          type: 'pie',
+          clockWise: false,
+          startAngle: 0,
+          hoverAnimation: false,
+          radius: ['10%', '10%'],
+          center: ['50%', '50%'],
+          tooltip: tooltip,
+          label: {
+            normal: {
+              show: false
+            },
+          },
+          labelLine: {
+            normal: {
+              show: false
+            }
+          },
+          data: arrData2
         }]
       }
 
-      myChart.setOption(this.option2, true);
+      myChart.setOption(this.option, true);
 
       window.addEventListener('resize', () => {
         myChart.resize();
@@ -334,12 +337,6 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-  }
-  #chart_scan2 {
-    z-index: 2;
-  }
-  #chart_scan {
-    z-index: 1;
   }
 
   .box {

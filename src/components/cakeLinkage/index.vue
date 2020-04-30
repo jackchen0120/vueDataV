@@ -34,20 +34,20 @@ export default {
     dataFormatter(obj) {
       let pList = ['金融类', '政务类', '医疗类', '互联网类'];
       let temp;
-      for (let year = 2016; year <= 2020; year++) {
-          let max = 0;
-          let sum = 0;
-          temp = obj[year];
-          for (let i = 0, l = temp.length; i < l; i++) {
-              max = Math.max(max, temp[i]);
-              sum += temp[i];
-              obj[year][i] = {
-                  name: pList[i],
-                  value: temp[i]
-              };
-          }
-          obj[year + 'max'] = Math.floor(max / 100) * 100;
-          obj[year + 'sum'] = sum;
+      for (let y = 2016; y <= 2020; y++) {
+        let max = 0;
+        let sum = 0;
+        temp = obj[y];
+        for (let i = 0, l = temp.length; i < l; i++) {
+          max = Math.max(max, temp[i]);
+          sum += temp[i];
+          obj[y][i] = {
+            name: pList[i],
+            value: temp[i]
+          };
+        }
+        obj[y + 'max'] = Math.floor(max / 100) * 100;
+        obj[y + 'sum'] = sum;
       }
       return obj;
     },
@@ -102,51 +102,71 @@ export default {
         2016:[509, 892, 201, 215]
       });
 
-
-
       this.option = {
         baseOption: {
           timeline: {
             axisType: 'category',
-            // realtime: false,
-            // loop: false,
             autoPlay: true,
-            // currentIndex: 2,
             playInterval: 1000,
-            // controlStyle: {
-            //   position: 'left'
-            // },
-            data: ['2016-01-01', '2017-01-01','2018-01-01', '2019-01-01', '2020-01-01'
-              // {
-              //   value: '2020-01-01',
-              //   tooltip: {
-              //     formatter(params) {
-              //       return params.name + '应用达到一个高度';
-              //     }
-              //   },
-              //   symbol: 'diamond',
-              //   symbolSize: 18
-              // },
-            ],
+            data: ['2016-01-01', '2017-01-01','2018-01-01', '2019-01-01', '2020-01-01'],
+            lineStyle: {
+              color: '#179bf1'
+            },
+            left: 30,
+            right: 30,
             label: {
+              color: '#2867a8',
               formatter(s) {
                 return (new Date(s)).getFullYear();
               }
+            },
+            checkpointStyle: {
+              color: '#01d8ff',
+              symbolSize: 10,
+              borderColor: 'rgba(1, 216, 255, 0.5)',
+              borderWidth: 5,
+            },
+            controlStyle: {
+              showPlayBtn: false,
+              borderColor: '#01bde6',
+              itemGap: 20  
+            }, 
+            itemStyle: {
+              // color: '#004b85',
+              borderColor: '#004b85',
+              borderWidth: 1,
+              shadowColor: 'rgba(1, 216, 225, 0.5)',
+              shadowBlur: 5
+            },
+            emphasis: {
+              label: {
+                color: '#01d8ff',
+                show: false
+              },
+              checkpointStyle: {
+                color: '#01d8ff',
+                borderColor: 'rgba(1, 216, 255, 0.5)',
+                borderWidth: 5,
+              },
+              controlStyle: {
+                borderColor: 'rgba(1, 216, 255, 0.5)'
+              },
+              itemStyle: {
+                color: '#01d8ff',
+                borderColor: 'rgba(1, 216, 225, 0.5)',
+                borderWidth: 5
+              } 
             }
           },
-          tooltip: {
-            trigger: 'item',
-            formatter: '{a} <br/>{b} : {c} ({d}%)'
-          },
+          // tooltip: {
+          //   trigger: 'item'
+          // },
           grid: {
             bottom: 80
           },
           calculable: true,
           xAxis: [{
             type: 'category',
-            axisLabel: { 
-              interval: 0 
-            },
             data: ['金融类', '政务类', '医疗类', '互联网类', '', '', ''],
             splitLine: { 
               show: false 
@@ -157,7 +177,7 @@ export default {
             axisLine: {
               show: true,
               lineStyle: {
-                color: '#999',
+                color: '#2867a8',
               }
             },
           }],
@@ -174,7 +194,7 @@ export default {
             axisLine: {
               show: true,
               lineStyle: {
-                color: '#999'
+                color: '#2867a8'
               }
             },
           }],
@@ -183,10 +203,28 @@ export default {
             type: 'bar',
             barMaxWidth: 15,
             center: ['20%', '65%'],
+            markPoint: {
+              symbol: 'pin',
+              itemStyle: {
+                normal: {
+                  color: '#eb9b44',
+                  shadowColor: '#eb9b44',
+                  shadowBlur: 15
+                }
+              },
+              data: [
+                {type: 'max', name: '最大值'},
+                {type: 'min', name: '最小值'}
+              ]
+            }
+            // label: {
+            //   show: true,
+            //   position: 'top'
+            // },
           },{
             name: '应用占比',
             type: 'pie',
-            center: ['80%', '20%'],
+            center: ['76%', '20%'],
             radius: '28%',
             z: 100
           }]
@@ -195,7 +233,7 @@ export default {
           series: [
             {data: [{
                 name: '金融类', 
-                value: this.dataMap.dataJR['2016sum'], 
+                value: this.dataMap.dataJR['2016sum'],
                 itemStyle: itemStyleJR
               },{
                 name: '政务类', 
@@ -248,7 +286,7 @@ export default {
                 name: '互联网类', 
                 value: this.dataMap.dataIT['2017sum'], 
                 itemStyle: itemStyleIT
-              }]
+              }],
             },
             {data: [{
                 name: '金融类', 

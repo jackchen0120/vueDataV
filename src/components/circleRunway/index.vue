@@ -9,10 +9,7 @@
     <div class="sn-content"> 
       <div class="sn-title">环形跑道图</div> 
       <div class="sn-body"> 
-        <div class="wrap-container"> 
-          <!-- <div class="pd-canvas">
-              <canvas-circle v-for="(item, index) in cicleList" :key="index" :classStyle="item.classStyle" :color="item.color" :percent="item.ratio" :lineWidth="item.lineWidth" :id="index"></canvas-circle>
-          </div> -->
+        <div class="wrap-container">
           <div class="chartsdom" id="chart_run"></div>
           <div class="pdt-info" :class="`info${index}`" v-for="(item, index) in arrData" :key="index">
             <span></span>
@@ -27,45 +24,24 @@
 </template>
 
 <script>
-// import canvasCircle from './canvas'
-
 export default {
   name: "circleRunway",
-  components: {
-    // canvasCircle
-  },
   data() {
     return {
       option: null,
       arrData: [{
-        name: '阿里云',
+        name: '联盟链',
         number: 725,
         percentage: 41.50
       },{
-        name: '腾讯云',
+        name: '私有链',
         number: 460,
         percentage: 30.95
       },{
-        name: '华为云',
+        name: '公有链',
         number: 382,
         percentage: 22.48
-      }],
-      // cicleList: [{
-      //   ratio: '50',
-      //   color: '#0772bb',
-      //   classStyle: 'canvasCircle1',
-      //   lineWidth: 2,
-      // },{
-      //   ratio: '30',
-      //   color: '#00ffff',
-      //   classStyle: 'canvasCircle2',
-      //   lineWidth: 2.5,
-      // },{
-      //   ratio: '20',
-      //   color: '#f48b3b',
-      //   classStyle: 'canvasCircle3',
-      //   lineWidth: 3.5,
-      // }],
+      }]
     }
   },
   mounted() {
@@ -204,40 +180,7 @@ export default {
     width: 100%;
     height: 90%;
   }
-  .pd-canvas {
-    position: relative; 
-    overflow: hidden; 
-    width: 100%; 
-    height: 90%; 
-    padding: 0; 
-    margin: 0; 
-    border-width: 0; 
-    cursor: default;
-    .canvas {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      user-select: none; 
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
-      padding: 0; 
-      margin: 0; 
-      border-width: 0;
-      &.canvasCircle1 {
-        left: 60px;
-        top: 4px;
-      }
-      &.canvasCircle2 {
-        transform: scale(.78);
-        left: 52px;
-        top: -7px;
-      }
-      &.canvasCircle3 {
-        transform: scale(.55);
-        left: 44px;
-        top: -16px;
-      }
-    }
-  }
+  
   .pdt-info {
     position: absolute;
     left: 50%;

@@ -68,19 +68,23 @@ export default {
         xAxis: {
           data: this.xAxisData,
           axisLabel: {
+            color: '#999',
             formatter: '{value} 月'
           },
           axisTick: {
             show: false
           }, 
           axisLine: {
-            show: false,
+            show: true,
             lineStyle: {
-              color: '#999',
+              color: 'rgba(40, 103, 168, 0.3)',
             }
           },
         },
         yAxis: {
+          axisLabel: {
+            color: '#999'
+          },
           axisTick: {
             show: false
           }, 
@@ -90,7 +94,7 @@ export default {
           axisLine: {
             show: true,
             lineStyle: {
-              color: '#999'
+              color: 'rgba(40, 103, 168, 0.3)'
             }
           },
         },
@@ -110,7 +114,7 @@ export default {
               normal: {
                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 1, 
-                  color: 'rgba(0,0,0,0)'
+                  color: 'rgba(0, 0, 0, 0)'
                 },{
                   offset: 0.5, 
                   color: '#466e71'
@@ -144,7 +148,7 @@ export default {
               normal: {
                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                   offset: 0, 
-                  color: 'rgba(255,255,255,0)'
+                  color: 'rgba(0, 0, 0, 0)'
                 },{
                   offset: 0.5, 
                   color: '#774a75'
@@ -164,7 +168,7 @@ export default {
                   shadowBlur: 20
                 }
               },
-              symbolSize: [8, 8], 
+              symbolSize: [10, 10], 
               symbolOffset: [0, 0],
               data: dataCoord2,
             },

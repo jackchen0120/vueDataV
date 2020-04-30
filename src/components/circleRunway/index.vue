@@ -10,10 +10,10 @@
       <div class="sn-title">环形跑道图</div> 
       <div class="sn-body"> 
         <div class="wrap-container"> 
-          <div class="pd-canvas">
+          <!-- <div class="pd-canvas">
               <canvas-circle v-for="(item, index) in cicleList" :key="index" :classStyle="item.classStyle" :color="item.color" :percent="item.ratio" :lineWidth="item.lineWidth" :id="index"></canvas-circle>
-          </div>
-          <!-- <div class="chartsdom" id="chart_run"></div> -->
+          </div> -->
+          <div class="chartsdom" id="chart_run"></div>
           <div class="pdt-info" :class="`info${index}`" v-for="(item, index) in arrData" :key="index">
             <span></span>
             <span>{{ item.name }}：</span>
@@ -27,33 +27,16 @@
 </template>
 
 <script>
-import canvasCircle from './canvas'
+// import canvasCircle from './canvas'
 
 export default {
   name: "circleRunway",
   components: {
-    canvasCircle
+    // canvasCircle
   },
   data() {
     return {
-      timer: null,
       option: null,
-      cicleList: [{
-        ratio: '50',
-        color: '#0772bb',
-        classStyle: 'canvasCircle1',
-        lineWidth: 2,
-      },{
-        ratio: '30',
-        color: '#00ffff',
-        classStyle: 'canvasCircle2',
-        lineWidth: 2.5,
-      },{
-        ratio: '20',
-        color: '#f48b3b',
-        classStyle: 'canvasCircle3',
-        lineWidth: 3,
-      }],
       arrData: [{
         name: '阿里云',
         number: 725,
@@ -66,127 +49,142 @@ export default {
         name: '华为云',
         number: 382,
         percentage: 22.48
-      }]
+      }],
+      // cicleList: [{
+      //   ratio: '50',
+      //   color: '#0772bb',
+      //   classStyle: 'canvasCircle1',
+      //   lineWidth: 2,
+      // },{
+      //   ratio: '30',
+      //   color: '#00ffff',
+      //   classStyle: 'canvasCircle2',
+      //   lineWidth: 2.5,
+      // },{
+      //   ratio: '20',
+      //   color: '#f48b3b',
+      //   classStyle: 'canvasCircle3',
+      //   lineWidth: 3.5,
+      // }],
     }
   },
   mounted() {
-    // this.getEchart();
+    this.getEchart();
   },
   methods: {
     getEchart() {
-      // // 初始化echarts实例
-      // let myChart = echarts.init(document.getElementById('chart_run'));
-      // let itemStyle = {
-      //   normal: {
-      //     color: '#091f45',
-      //   }
-      // }
+      // 初始化echarts实例
+      let myChart = echarts.init(document.getElementById('chart_run'));
+      let itemStyle = {
+        normal: {
+          color: '#091f45',
+        }
+      }
 
-      // this.option = {
-      //   animation: true,
-      //   color: ['#0772bb', '#00ffff', '#f48b3b'],
-      //   series: [{
-      //     name: '2020年',
-      //     type: 'pie',
-      //     clockWise: false,
-      //     startAngle: 90,
-      //     hoverAnimation: false,
-      //     radius: ['86%', '90%'],
-      //     center: ['50%', '50%'],
-      //     label: {
-      //       normal: {
-      //         show: false
-      //       },
-      //     },
-      //     labelLine: {
-      //       normal: {
-      //         show: false
-      //       }
-      //     },
-      //     data: [{
-      //       value: 5,
-      //       name: '50%',
-      //       itemStyle: {
-      //         normal: {
-      //           color: '#0772bb'
-      //         }
-      //       }
-      //     },{
-      //       value: 5,
-      //       name: '50%',
-      //       itemStyle: itemStyle
-      //     }]
-      //   },{
-      //     name: '2019年',
-      //     type: 'pie',
-      //     clockWise: false,
-      //     startAngle: 90,
-      //     hoverAnimation: false,
-      //     radius: ['66%', '70%'],
-      //     center: ['50%', '50%'],
-      //     label: {
-      //       normal: {
-      //         show: false
-      //       },
-      //     },
-      //     labelLine: {
-      //       normal: {
-      //         show: false
-      //       }
-      //     },
-      //     data: [{
-      //       value: 3,
-      //       name: '50%',
-      //       itemStyle: {
-      //         normal: {
-      //           color: '#00ffff'
-      //         }
-      //       }
-      //     },{
-      //       value: 7,
-      //       name: '50%',
-      //       itemStyle: itemStyle
-      //     }]
-      //   },{
-      //     name: '2018年',
-      //     type: 'pie',
-      //     clockWise: false,
-      //     startAngle: 90,
-      //     hoverAnimation: false,
-      //     radius: ['46%', '50%'],
-      //     center: ['50%', '50%'],
-      //     label: {
-      //       normal: {
-      //         show: false
-      //       },
-      //     },
-      //     labelLine: {
-      //       normal: {
-      //         show: false
-      //       }
-      //     },
-      //     data: [{
-      //       value: 2,
-      //       name: '50%',
-      //       itemStyle: {
-      //         normal: {
-      //           color: '#f48b3b'
-      //         }
-      //       }
-      //     },{
-      //       value: 8,
-      //       name: '50%',
-      //       itemStyle: itemStyle
-      //     }]
-      //   }]
-      // }
+      this.option = {
+        color: ['#0772bb', '#00ffff', '#f48b3b'],
+        series: [{
+          name: '2020年',
+          type: 'pie',
+          clockWise: false,
+          startAngle: 90,
+          hoverAnimation: false,
+          radius: ['86%', '90%'],
+          center: ['50%', '50%'],
+          label: {
+            normal: {
+              show: false
+            },
+          },
+          labelLine: {
+            normal: {
+              show: false
+            }
+          },
+          data: [{
+            value: 5,
+            name: '50%',
+            itemStyle: {
+              normal: {
+                color: '#0772bb'
+              }
+            }
+          },{
+            value: 5,
+            name: '50%',
+            itemStyle: itemStyle
+          }]
+        },{
+          name: '2019年',
+          type: 'pie',
+          clockWise: false,
+          startAngle: 90,
+          hoverAnimation: false,
+          radius: ['66%', '70%'],
+          center: ['50%', '50%'],
+          label: {
+            normal: {
+              show: false
+            },
+          },
+          labelLine: {
+            normal: {
+              show: false
+            }
+          },
+          data: [{
+            value: 3,
+            name: '50%',
+            itemStyle: {
+              normal: {
+                color: '#00ffff'
+              }
+            }
+          },{
+            value: 7,
+            name: '50%',
+            itemStyle: itemStyle
+          }]
+        },{
+          name: '2018年',
+          type: 'pie',
+          clockWise: false,
+          startAngle: 90,
+          hoverAnimation: false,
+          radius: ['46%', '50%'],
+          center: ['50%', '50%'],
+          label: {
+            normal: {
+              show: false
+            },
+          },
+          labelLine: {
+            normal: {
+              show: false
+            }
+          },
+          data: [{
+            value: 2,
+            name: '50%',
+            itemStyle: {
+              normal: {
+                color: '#f48b3b'
+              }
+            }
+          },{
+            value: 8,
+            name: '50%',
+            itemStyle: itemStyle
+          }]
+        }]
+      }
 
-      // // 使用制定的配置项和数据显示图表
-      // myChart.setOption(this.option, true);
+      // 使用制定的配置项和数据显示图表
+      myChart.setOption(this.option, true);
 
-      // window.addEventListener('resize', () => {
-      //   myChart.resize();
-      // });
+      window.addEventListener('resize', () => {
+        myChart.resize();
+      });
 
     },
   },
@@ -231,12 +229,12 @@ export default {
       &.canvasCircle2 {
         transform: scale(.78);
         left: 52px;
-        top: -1px;
+        top: -7px;
       }
       &.canvasCircle3 {
-        transform: scale(.6);
+        transform: scale(.55);
         left: 44px;
-        top: -7px;
+        top: -16px;
       }
     }
   }

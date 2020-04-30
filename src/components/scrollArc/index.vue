@@ -62,6 +62,9 @@ export default {
         xAxis: {
           type: 'category',
           data: this.xData,
+          axisTick: {
+            show: false
+          }, 
           axisLabel: {
             formatter: '{value} 月'
           },

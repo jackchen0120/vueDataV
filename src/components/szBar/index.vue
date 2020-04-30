@@ -70,15 +70,25 @@ export default {
           axisLabel: {
             formatter: '{value} 月'
           },
+          axisTick: {
+            show: false
+          }, 
           axisLine: {
+            show: false,
             lineStyle: {
               color: '#999',
             }
           },
         },
         yAxis: {
+          axisTick: {
+            show: false
+          }, 
+          splitLine: {
+            show: false
+          },
           axisLine: {
-            show: false,
+            show: true,
             lineStyle: {
               color: '#999'
             }

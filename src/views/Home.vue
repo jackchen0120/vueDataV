@@ -17,7 +17,11 @@
       <szBar />
 
       <ringPin />
+      <rotateColorful />
       <circleRunway />
+      <scanRadius />
+
+      <cakeLinkage />
 
       <div class="divider"></div>
 

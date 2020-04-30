@@ -15,6 +15,7 @@ import ringPin from './ringPin' // 环形气泡图
 import rotateColorful from './rotateColorful' // 旋转多彩图
 import circleRunway from './circleRunway' // 环形跑道图
 import scanRadius from './scanRadius' // 扫描半径图
+import cakeLinkage from './cakeLinkage' // 柱饼组合联动
 
 const components = {
   bgAnimation,
@@ -27,7 +28,8 @@ const components = {
   ringPin,
   rotateColorful,
   circleRunway,
-  scanRadius
+  scanRadius,
+  cakeLinkage,
   
 };
 

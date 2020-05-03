@@ -60,7 +60,7 @@ export default {
       this.option = {
         color: ['#0772bb', '#00ffff', '#f48b3b'],
         series: [{
-          name: '2020年',
+          name: '联盟链',
           type: 'pie',
           clockWise: false,
           startAngle: 90,
@@ -91,7 +91,7 @@ export default {
             itemStyle: itemStyle
           }]
         },{
-          name: '2019年',
+          name: '私有链',
           type: 'pie',
           clockWise: false,
           startAngle: 90,
@@ -122,7 +122,7 @@ export default {
             itemStyle: itemStyle
           }]
         },{
-          name: '2018年',
+          name: '公有链',
           type: 'pie',
           clockWise: false,
           startAngle: 90,

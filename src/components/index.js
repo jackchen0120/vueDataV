@@ -16,6 +16,19 @@ import rotateColorful from './rotateColorful' // 旋转多彩图
 import circleRunway from './circleRunway' // 环形跑道图
 import scanRadius from './scanRadius' // 扫描半径图
 import cakeLinkage from './cakeLinkage' // 柱饼组合联动
+import dynamicLine from './dynamicLine' // 动态轮播折线图
+import pyramidTrend from './pyramidTrend' // 金字塔趋势
+import staffMix from './staffMix' // 人员占比
+import flashCloud from './flashCloud' // 闪动云
+import ringPie from './ringPie' // 环形饼图
+import colorfulRadar from './colorfulRadar' // 多彩雷达
+import dynamicList from './dynamicList' // 动态列表动画
+import bar3d from './bar3d' // 3D立体柱状图
+import colorfulArea from './colorfulArea' // 多彩轮播面积
+import rainbow from './rainbow' // 彩虹轨道图
+import gauge from './gauge' // 仪表盘
+import waterPolo from './waterPolo' // 水球图
+import circleNesting from './circleNesting' // 圆环套圆环
 
 const components = {
   bgAnimation,
@@ -30,6 +43,19 @@ const components = {
   circleRunway,
   scanRadius,
   cakeLinkage,
+  dynamicLine,
+  pyramidTrend,
+  staffMix,
+  flashCloud,
+  ringPie,
+  colorfulRadar,
+  dynamicList,
+  bar3d,
+  colorfulArea,
+  rainbow,
+  gauge,
+  waterPolo,
+  circleNesting,
   
 };
 

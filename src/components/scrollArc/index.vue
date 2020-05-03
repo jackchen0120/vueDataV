@@ -38,6 +38,7 @@ export default {
       this.option = {
         tooltip: {
           trigger: 'axis',
+          showContent: false,
           axisPointer: { 
             type: 'shadow',
             shadowStyle: {
@@ -53,7 +54,7 @@ export default {
         },
         color: ['#5d83ff'],
         grid: {
-          top: 20,
+          top: 30,
           left: 20,
           right: 20,
           bottom: 20,
@@ -62,6 +63,7 @@ export default {
         xAxis: {
           type: 'category',
           data: this.xData,
+          boundaryGap: false,
           axisTick: {
             show: false
           }, 
@@ -87,6 +89,23 @@ export default {
           name: '人数',
           type: 'line',
           data: this.data,
+          symbolSize: 10,
+          itemStyle: {
+            opacity: 0,
+          },
+          emphasis: {
+            label: {
+              show: true,
+              color: '#fff',
+              fontSize: 20
+            },
+            itemStyle: {
+              color: '#5d83ff',
+              borderColor: '#fff',
+              borderWidth: 2,
+              opacity: 1
+            },
+          },
           areaStyle: {
             normal: {
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{

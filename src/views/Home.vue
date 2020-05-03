@@ -22,6 +22,22 @@
       <scanRadius />
 
       <cakeLinkage />
+      <pyramidTrend />
+      <dynamicLine />
+
+      <staffMix />
+      <flashCloud />
+      <ringPie />
+      <colorfulRadar />
+
+      <dynamicList />
+      <bar3d />
+      <colorfulArea />
+
+      <rainbow />
+      <gauge />
+      <waterPolo />
+      <circleNesting />
 
       <div class="divider"></div>
 
@@ -88,9 +104,12 @@ export default {
     .divider {
       position: absolute;
       left: 50px;
-      top: 2000px;
+      top: 3253px;
       width: 90%;
       height: 50px;
+      width: 300px;
+      border: none;
+      background: transparent;
     }
 
   }

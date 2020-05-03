@@ -28,7 +28,7 @@ export default {
     }
   },
   mounted() {
-     this.getEchart();
+    this.getEchart();
   },
   methods: {
     dataFormatter(obj) {
@@ -107,8 +107,8 @@ export default {
           timeline: {
             axisType: 'category',
             autoPlay: true,
-            playInterval: 1000,
-            data: ['2016-01-01', '2017-01-01','2018-01-01', '2019-01-01', '2020-01-01'],
+            playInterval: 2000,
+            data: ['2016-01-01', '2017-01-01', '2018-01-01', '2019-01-01', '2020-01-01'],
             lineStyle: {
               color: '#179bf1'
             },
@@ -162,12 +162,13 @@ export default {
           //   trigger: 'item'
           // },
           grid: {
-            bottom: 80
+            bottom: '20%',
+            right: "42%"
           },
           calculable: true,
           xAxis: [{
             type: 'category',
-            data: ['金融类', '政务类', '医疗类', '互联网类', '', '', ''],
+            data: ['金融类', '政务类', '医疗类', '互联网类'],
             splitLine: { 
               show: false 
             },
@@ -184,7 +185,6 @@ export default {
           yAxis: [{
             type: 'value',
             name: '区块链应用（个）',
-            offset: -12,
             splitLine: {
               show: false
             },
@@ -203,6 +203,7 @@ export default {
             type: 'bar',
             barMaxWidth: 15,
             center: ['20%', '65%'],
+            seriesLayoutBy: 'row',
             markPoint: {
               symbol: 'pin',
               itemStyle: {

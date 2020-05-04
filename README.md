@@ -39,7 +39,7 @@
     │  ├─iconfont                     // 引用阿里巴巴矢量图标库   
     │  ├─img                          // 存放公共图片文件夹      
     │  ├─js
-    │  │      utils.js                // 封装屏幕缩放js方法
+    │  │      utils.js                // 封装工具类方法
     │  └─styles
     │      │  base.scss               // 基础样式文件
     │      │  common.scss             // 公用样式文件

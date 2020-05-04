@@ -8,7 +8,7 @@ import bgAnimation from './bgAnimation' // 登录界面背景图动画
 import modal from './modal' // 自定义全局模态框
 import sinan from './sinan' // 司南排名图
 import seamless from './seamless' // 新闻无缝滚动
-import pyramid from './pyramid' // 金字塔数据图
+import pyramid from './pyramid' // 金字塔动画
 import scrollArc from './scrollArc' // 滚动弧形线
 import szBar from './szBar' // 双轴柱状图
 import ringPin from './ringPin' // 环形气泡图

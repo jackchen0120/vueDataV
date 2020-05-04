@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "echarts-gl": "^1.1.1",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6",
+    "vue-seamless-scroll": "^1.1.21",
     "vuex": "^3.2.0"
   },
   "devDependencies": {

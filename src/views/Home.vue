@@ -10,7 +10,7 @@
       <div class="top"></div>
       
       <sinan />
-      <rimian />
+      <seamless />
       <pyramid />
 
       <scrollArc />

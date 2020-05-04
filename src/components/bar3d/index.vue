@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import 'echarts-gl'
-
 export default {
   name: "bar3d",
   data() {

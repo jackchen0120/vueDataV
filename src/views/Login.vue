@@ -159,7 +159,7 @@ export default {
 	  	background: rgba(36, 36, 85, .5);
 	  	margin: 0 auto;
 	  	padding: 35px 30px 25px;
-	  	box-shadow: 0 0 25px rgb(72, 72, 85);
+	  	box-shadow: 0 0 25px rgba(255, 255, 255, .5);
 	  	border-radius: 10px;
 	    .item {
 	    	display: flex;

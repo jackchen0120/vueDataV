@@ -13,7 +13,7 @@
           <span class="tem">{{ weatcherData.tem }}°C</span> 
           <span class="wea">{{ weatcherData.wea }}</span>
         </div>
-        <h2>区块链科技有限公司品牌概览</h2>
+        <h2>区块链科技公司品牌概览</h2>
         <div class="showTime">
           <span class="time">{{ nowTime }}</span>
           <span class="date">
@@ -26,22 +26,18 @@
       <section class="mainbox">
         <div class="item left">
           <div class="panel bar">
-            <h2>
-              业务范围 
-              <a href="javascript:;">2019</a>
-              <a href="javacript:;"> 2020</a>
-            </h2>
-            <div class="chart"></div>
+            <h2>业务范围</h2>
+            <div class="chart" id="chart_left1"></div>
             <div class="panel-footer"></div>
           </div>
           <div class="panel line">
             <h2>人才队伍</h2>
-            <div class="chart"></div>
+            <div class="chart" id="chart_left2"></div>
             <div class="panel-footer"></div>
           </div>
           <div class="panel pie">
             <h2>客户分布</h2>
-            <div class="chart"></div>
+            <div class="chart" id="chart_left3"></div>
             <div class="panel-footer"></div>
           </div>
         </div>
@@ -80,17 +76,17 @@
         <div class="item right">
           <div class="panel bar1">
             <h2>产品热词</h2>
-            <div class="chart"></div>
+            <div class="chart" id="chart_right1"></div>
             <div class="panel-footer"></div>
           </div>
           <div class="panel line1">
-            <h2>营收趋势</h2>
-            <div class="chart"></div>
+            <h2>营收状况</h2>
+            <div class="chart" id="chart_right2"></div>
             <div class="panel-footer"></div>
           </div>
           <div class="panel pie1">
             <h2>产品体系</h2>
-            <div class="chart"></div>
+            <div class="chart" id="chart_right3"></div>
             <div class="panel-footer"></div>
           </div>
         </div>
@@ -105,6 +101,7 @@
 import '@/assets/js/flexible'
 import '@/assets/js/china'
 import countTo from 'vue-count-to'
+import '@/assets/js/echarts-wordcloud.min'
 
 export default {
   name: 'Brand',
@@ -119,7 +116,6 @@ export default {
       timer: null,
       imgSrc: '',
       weatcherData: {},
-      option: null,
       startVal: 0,
       geoCoordMap: {},
       XAData: [
@@ -156,6 +152,12 @@ export default {
     }, 1000 * 60 * 60)
     this.nowTimes();
     this.getEchart();
+    this.getEchartLeft1();
+    this.getEchartLeft2();
+    this.getEchartRight1();
+    this.timer = setInterval(() => {
+      this.getEchartRight1();
+    }, 3000)
   },
   methods: {
     timeFormate(timeStamp) { //显示当前时间
@@ -441,7 +443,7 @@ export default {
         );
       });
 
-      this.option = {
+      let option = {
         tooltip: {
           trigger: "item",
           formatter: (params, ticket, callback) => {
@@ -485,11 +487,424 @@ export default {
         series: series
       }
 
-      myChart.setOption(this.option, true);
+      myChart.setOption(option, true);
 
       window.addEventListener('resize', () => {
         myChart.resize();
       });
+    },
+    // 左1柱状图
+    getEchartLeft1() {
+      // 实例化对象
+      let myChart = echarts.init(document.getElementById('chart_left1'));
+      let charts = { // 按顺序排列从大到小
+        cityList: ['金融行业', '电子政务', '文创版权', '教育行业', '智慧停车', '医疗互联', '物流行业'],
+        cityData: [1500, 1200, 900, 600, 400, 300, 100]
+      }
+
+      let top10CityList = charts.cityList;
+      let top10CityData = charts.cityData;
+      let color = ['rgba(14,109,236', 'rgba(255,91,6', 'rgba(100,255,249', 'rgba(248,195,248', 'rgba(110,234,19', 'rgba(255,168,17', 'rgba(218,111,227'];
+
+      let lineY = [];
+      for (let i = 0; i < charts.cityList.length; i++) {
+        let x = i
+        if (x > color.length - 1) {
+          x = color.length - 1
+        }
+        let data = {
+          name: charts.cityList[i],
+          color: color[x] + ')',
+          value: top10CityData[i],
+          itemStyle: {
+            normal: {
+              show: true,
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                offset: 0,
+                color: color[x] + ', 0.3)'
+              }, {
+                offset: 1,
+                color: color[x] + ', 1)'
+              }], false),
+              barBorderRadius: 10
+            },
+            emphasis: {
+              shadowBlur: 15,
+              shadowColor: 'rgba(0, 0, 0, 0.1)'
+            }
+          }
+        }
+        lineY.push(data)
+      }  
+
+      // 指定配置和数据
+      let option = {
+        color: color,
+        tooltip: {
+          trigger: 'item',
+        },
+        grid: {
+          borderWidth: 0,
+          top: '5%',
+          left: '2%',
+          right: '2%',
+          bottom: '0%',
+          containLabel: true
+        },
+        xAxis: [{
+          type: 'value',
+          axisTick: {
+            show: false
+          },
+          axisLine: {
+            show: false
+          },
+          splitLine: {
+            show: false
+          },
+          axisLabel: {
+            show: false
+          }
+        }],
+        yAxis: [{
+          type: 'category',
+          inverse: true,
+          axisTick: {
+            show: false
+          },
+          axisLine: {
+            show: false
+          },
+          axisLabel: {
+            show: false,
+            inside: false
+          },
+          data: top10CityList
+        }, {
+          type: 'category',
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          },
+          axisLabel: {
+            show: true,
+            inside: false,
+            textStyle: {
+              color: '#b3ccf8',
+              fontSize: 13
+            },
+            formatter: (val) => {
+              return `${val}`
+            }
+          },
+          splitArea: {
+            show: false
+          },
+          splitLine: {
+            show: false
+          },
+          data: top10CityData.reverse()
+        }],
+        series: [{
+          name: '',
+          type: 'bar',
+          zlevel: 2,
+          barWidth: '10px',
+          data: lineY,
+          animationDuration: 1500,
+          label: {
+            normal: {
+              color: '#b3ccf8',
+              show: true,
+              position: [0, '-15px'],
+              textStyle: {
+                fontSize: 13
+              },
+              formatter: (a, b) => {
+                return a.name;
+              }
+            }
+          }
+        }]
+      };
+
+      // 把配置给实例对象
+      myChart.setOption(option, true);
+      window.addEventListener("resize", () => {
+        myChart.resize();
+      });
+    },
+    // 左2饼图
+    getEchartLeft2() {
+      let myChart = echarts.init(document.getElementById('chart_left2'));
+      let scaleData = [{
+        name: '博士',
+        value: 5
+      },{
+        name: '硕士',
+        value: 10
+      },{
+        name: '本科',
+        value: 10
+      },{
+        name: '专科',
+        value: 10
+      },{
+        name: '国防科大',
+        value: 5
+      },{
+        name: '大厂专家',
+        value: 5
+      }];
+      let rich = {
+        white: {
+          color: '#ddd',
+          align: 'center',
+          padding: [3, 0]
+        }
+      };
+      let placeHolderStyle = {
+        normal: {
+          label: {
+            show: false
+          },
+          labelLine: {
+            show: false
+          },
+          color: 'rgba(0, 0, 0, 0)',
+          borderColor: 'rgba(0, 0, 0, 0)',
+          borderWidth: 0
+        }
+      };
+      let data = [];
+      let color=['#00ffff', '#00cfff', '#006ced', '#ffe000', '#ffa800', '#ff5b00', '#ff3000']
+      for (let i = 0; i < scaleData.length; i++) {
+        data.push({
+          value: scaleData[i].value,
+          name: scaleData[i].name,
+          itemStyle: {
+            normal: {
+              borderWidth: 6,
+              shadowBlur: 10,
+              borderColor: color[i],
+              shadowColor: color[i]
+            }
+          }
+        }, {
+          value: 2,
+          name: '',
+          itemStyle: placeHolderStyle
+        });
+      }
+
+      let option = {
+        series: [{
+          name: '',
+          type: 'pie',
+          clockWise: false,
+          radius: ['66%', '68%'],
+          center: ['50%', '50%'],
+          hoverAnimation: false,
+          itemStyle: {
+            normal: {
+              label: {
+                show: true,
+                position: 'outside',
+                color: '#ddd',
+                formatter: (params) => {
+                  let percent = 0;
+                  let total = 0;
+                  for (let i = 0; i < scaleData.length; i++) {
+                    total += scaleData[i].value;
+                  }
+                  percent = ((params.value / total) * 100).toFixed(0);
+                  if (params.name !== '') {
+                    return params.name + '\n{white|' + '占比' + percent + '%}';
+                  } else {
+                    return '';
+                  }
+                },
+                rich: rich
+              },
+              labelLine: {
+                length: 10,
+                length2: 30,
+                show: true,
+                color: '#00ffff'
+              }
+            }
+          },
+          data: data
+        }]
+      }
+
+      myChart.setOption(option, true);
+      window.addEventListener("resize", () => {
+        myChart.resize();
+      });
+    },
+    // 左3折线图
+    getEchartLeft3() {
+      
+    },
+    // 右1
+    getEchartRight1() {
+      let myChart = echarts.init(document.getElementById('chart_right1'));
+      let option = {
+        // backgroundColor: 'rgba(255,255,255,.05)',
+        // tooltip: {
+        //   show: false
+        // },
+        series: [{
+          type: 'wordCloud',
+          gridSize: 1,
+          sizeRange: [12, 50],
+          rotationRange: [-90, 90],
+          rotationStep: 45,
+          shape: 'diamond',
+          width: '90%',
+          textPadding: 0,
+          autoSize: {
+            enable: true,
+            minSize: 6
+          },
+          textStyle: {
+            normal: {
+              textBorderColor: 'rgba(255,255,255,0.3)',
+              textBorderWidth: 1,
+              color: () => {
+                return 'rgb(' + [
+                  Math.round(Math.random() * 160),
+                  Math.round(Math.random() * 160),
+                  Math.round(Math.random() * 160)
+                ].join(',') + ')';
+              }
+            },
+            // emphasis: {
+            //   shadowBlur: 10,
+            //   shadowColor: 'rgba(255,255,255, .1)'
+            // }
+          },
+          data: [{
+            name: '区块链',
+            value: 810
+          }, {
+            name: '云计算',
+            value: 520
+          },{
+            name: "人工智能",
+            value: 928
+          },{
+            name: "大数据",
+            value: 906
+          },{
+            name: "工业互联网",
+            value: 825
+          },{
+            name: "医疗",
+            value: 514
+          },{
+            name: "存证溯源",
+            value: 486
+          },{
+            name: "政务",
+            value: 53
+          },{
+            name: "密码学",
+            value: 927
+          },{
+            name: "金融",
+            value: 908
+          },{
+            name: "供应链",
+            value: 693
+          },{
+            name: "公有链",
+            value: 611
+          },{
+            name: "私有链",
+            value: 512
+          },{
+            name: "联盟链",
+            value: 382
+          },{
+            name: "数据共享",
+            value: 312
+          },{
+            name: "文创版权",
+            value: 187
+          },{
+            name: "天河链",
+            value: 163
+          },{
+            name: "优壹号",
+            value: 104
+          },{
+            name: "UDFS存储",
+            value: 3
+          },{
+            name: "在线教育",
+            value: 1331
+          },{
+            name: "关联分析",
+            value: 941
+          },{
+            name: "智慧停车",
+            value: 585
+          },{
+            name: "链云生态",
+            value: 473
+          },{
+            name: "应用层",
+            value: 358
+          },{
+            name: "网络层",
+            value: 246
+          },{
+            name: "数据层",
+            value: 207
+          },{
+            name: "基础层",
+            value: 194
+          },{
+            name: "智能合约",
+            value: 104
+          },{
+            name: "去中心化",
+            value: 87
+          },{
+            name: "数字货币",
+            value: 415
+          },{
+            name: "酷屏",
+            value: 253
+          },{
+            name: "可视化",
+            value: 211
+          },{
+            name: "P2P",
+            value: 116
+          },{
+            name: "数据挖掘",
+            value: 1309
+          }]
+        }]
+      }
+
+      myChart.setOption(option, true);
+      window.addEventListener("resize", () => {
+        myChart.resize();
+      });
+    },
+    // 右2
+    getEchartRight2() {
+
+    },
+    // 右3
+    getEchartRight3() {
+
     }
   },
   beforeDestroy() {

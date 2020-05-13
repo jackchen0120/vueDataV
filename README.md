@@ -30,7 +30,6 @@
 
 
 
-
 # 项目架构
 ```
 │  vue.config.js                     // webpack配置              

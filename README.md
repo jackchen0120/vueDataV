@@ -57,7 +57,14 @@
     │  ├─circleNesting                // 圆环套圆环   
     │  ├─circleRunway                 // 环形跑道图   
     │  ├─colorfulArea                 // 多彩轮播面积     
-    │  ├─colorfulRadar                // 多彩雷达    
+    │  ├─colorfulRadar                // 多彩雷达 
+    │  ├─companySummary
+    │  │      business.vue            // 业务范围
+    │  │      distrbution.vue         // 客户分布
+    │  │      history.vue             // 发展历程
+    │  │      income.vue              // 营业收入
+    │  │      talent.vue              // 人才队伍
+    │  │      wordCloud.vue           // 产品热词    
     │  ├─dynamicLine                  // 动态轮播折线图   
     │  ├─dynamicList                  // 动态列表动画   
     │  ├─flashCloud                   // 闪动云  
@@ -85,6 +92,7 @@
     ├─store
     │      index.js                   // 状态管理仓库未使用到
     └─views
+            Brand.vue                 // 公司品牌介绍
             Home.vue                  // 酷屏首页统计图
             Login.vue                 // 登录界面
 ```

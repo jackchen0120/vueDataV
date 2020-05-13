@@ -86,7 +86,7 @@ export default {
   		userName: 'admin',
   		userPwd: '123456',
       visible: false,
-      modalContent: '这是一段信息'
+      modalContent: '这是一段自定义模态框消息'
   	}
   },
   computed: {

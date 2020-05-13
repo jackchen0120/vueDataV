@@ -33,8 +33,8 @@
 export default {
   name: 'Modal',
   props: {
-    // midal标题
-    title:{
+    // modal标题
+    title: {
       type: String,
       default: '提示'
     },
@@ -50,22 +50,23 @@ export default {
     },
     // 是否显示取消按钮
     showCancle: {
-        type: Boolean,
-        default: true
+      type: Boolean,
+      default: true
     },
     // 确认按钮文字
     confirmText: {
-        type: String,
-        default: '确认'
+      type: String,
+      default: '确认'
     },
     // 取消按钮文字
     cancleText: {
-        type: String,
-        default: '取消'
+      type: String,
+      default: '取消'
     }
   },
-  watch:{
+  watch: {
     visible (curVal) {
+      // 监听visible值的变化
       console.log(curVal)
     }
   },

@@ -30,6 +30,13 @@ import gauge from './gauge' // 仪表盘
 import waterPolo from './waterPolo' // 水球图
 import circleNesting from './circleNesting' // 圆环套圆环
 
+import business from './companySummary/business' // 业务范围
+import talent from './companySummary/talent' // 人才队伍
+import income from './companySummary/income' // 营业收入
+import wordCloud from './companySummary/wordCloud' // 产品热词
+import distribution from './companySummary/distribution' // 客户分布
+import history from './companySummary/history' // 发展历程
+
 const components = {
   bgAnimation,
   modal,
@@ -56,6 +63,13 @@ const components = {
   gauge,
   waterPolo,
   circleNesting,
+
+  business,
+  talent,
+  income,
+  wordCloud,
+  distribution,
+  history,
   
 };
 

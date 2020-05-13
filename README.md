@@ -24,9 +24,6 @@
 <img src="https://github.com/jackchen0120/vueDataV/blob/master/public/img/dataV_3.png" width="900" alt="首页酷屏统计图" />
 <img src="https://github.com/jackchen0120/vueDataV/blob/master/public/img/dataV_4.png" width="900" alt="首页酷屏统计图" />
 
-## 公司品牌介绍
-
-<img src="https://github.com/jackchen0120/vueDataV/blob/dev/public/img/brand.png" width="900" alt="炫酷展示公司品牌" />
 
 # 项目架构
 ```

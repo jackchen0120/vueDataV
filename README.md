@@ -2,7 +2,7 @@
 
 * 一个基于Vue前端框架和第三方图表库echarts构建的可视化大数据平台，通过vue项目构建、指令的灵活运用、组件封装、组件之间通信，使内部图表组件库可实现自由替换和组合。
 * 项目中部分前端库采用外部CDN引入，可以减少打包文件体积，加快页面渲染。
-* 可视化数据大屏展示对前端性能要求高，建议使用谷歌浏览器查看或开发，屏幕尺寸为1920px宽和1080px高的最佳效果。
+* 可视化数据大屏展示对前端性能要求高，建议使用谷歌浏览器查看或开发，屏幕尺寸为1920px宽和1080px高是最佳效果。
 * 目前制作数据可视化大屏，前端比较流行的第三方库有：Echarts（百度），AntV（阿里），Highcharts（国外公司），D3.js（国外公司）。
 * 如果感觉还不错的话，老铁们是不是赏个★Star鼓励一哈，后续会持续更新和优化，也期待大家的交流。
 
@@ -23,6 +23,11 @@
 <img src="https://github.com/jackchen0120/vueDataV/blob/master/public/img/dataV_2.png" width="900" alt="首页酷屏统计图" />
 <img src="https://github.com/jackchen0120/vueDataV/blob/master/public/img/dataV_3.png" width="900" alt="首页酷屏统计图" />
 <img src="https://github.com/jackchen0120/vueDataV/blob/master/public/img/dataV_4.png" width="900" alt="首页酷屏统计图" />
+
+## 公司品牌介绍
+
+<img src="https://github.com/jackchen0120/vueDataV/blob/master/public/img/brand.png" width="900" alt="炫酷展示公司品牌" />
+
 
 
 
@@ -104,6 +109,7 @@
 * 自定义消息提示框
 * 酷屏首页组件库
 * 各种酷炫小部件
+* 炫酷展示公司品牌
 
 # 下载安装依赖
 ```

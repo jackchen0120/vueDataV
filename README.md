@@ -136,6 +136,6 @@ npm run serve
 npm run build
 ```
 
-## 获取更多项目实战经验及各种源码资源，请关注作者公众号：懒人码农
+#### 获取更多项目实战经验及各种源码资源，请关注作者公众号：懒人码农
 
-<img src="https://user-gold-cdn.xitu.io/2020/7/1/1730b0bf4ee1f62e?imageslim" alt="公众号二维码" />
+<img src="https://user-gold-cdn.xitu.io/2020/7/1/1730b0bf4ee1f62e?imageslim" width="500" alt="公众号二维码" />

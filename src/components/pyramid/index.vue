@@ -10,7 +10,7 @@
     <div class="back_img"></div> 
     <div class="back_img1"></div> 
     <div class="back_img2"></div>
-    <ul :class="{first: index == 0, second: index == 1, third: index == 2, four: index == 3}" v-for="(item, index) in arrData"> 
+    <ul :class="{first: index == 0, second: index == 1, third: index == 2, four: index == 3}" v-for="(item, index) in arrData" :key="index"> 
       <li></li>
       <li></li>
       <li></li> 

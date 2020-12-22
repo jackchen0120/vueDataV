@@ -17,7 +17,7 @@
             <span>{{ item.name }}</span>
           </div>
 
-          <div class="preinfos" :class="`pre${i}`" v-for="(v, i) in arrData">
+          <div class="preinfos" :class="`pre${i}`" v-for="(v, i) in arrData" :key="i">
             <span></span>
             <span></span>
           </div>

@@ -31,6 +31,14 @@ const routes = [
     meta: {
       title: '公司品牌介绍'
     }
+  },
+  {
+    path: '/industry',
+    name: 'Industry',
+    component: () => import('@/views/Industry.vue'),
+    meta: {
+      title: '行业案例介绍'
+    }
   }
 ]
 

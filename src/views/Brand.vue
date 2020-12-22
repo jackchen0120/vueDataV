@@ -181,8 +181,8 @@ export default {
     getWeather() { // 第三方天气api接口
       axios.get('https://www.tianqiapi.com/api/', {
         params: {
-          appid: '26148275',
-          appsecret: '2id6H48Y',
+          appid: '96261327',
+          appsecret: '4OXVSSlP',
           version: 'v6'
         }
       }).then(res => {

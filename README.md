@@ -138,4 +138,4 @@ npm run build
 
 #### 获取更多项目实战经验及各种源码资源，请关注作者公众号：懒人码农
 
-<img src="https://user-gold-cdn.xitu.io/2020/7/1/1730b0bf4ee1f62e?imageslim" width="500" alt="公众号二维码" />
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAyMC81LzEzLzE3MjBlM2U0ZmQ5NDZiZDQ?x-oss-process=image/format,png" width="430" alt="公众号二维码" />

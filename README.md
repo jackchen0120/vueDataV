@@ -9,6 +9,8 @@
 
 [在线效果演示](https://jackchen0120.github.io/vueDataV/)
 
+[操作教程分上下篇](https://juejin.cn/post/6844904158181457933)
+
 # 效果截图
 
 ## 登录界面

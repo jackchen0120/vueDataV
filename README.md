@@ -9,7 +9,9 @@
 
 [在线效果演示](https://jackchen0120.github.io/vueDataV/)
 
-[操作教程分上下篇](https://juejin.cn/post/6844904158181457933)
+## 学习教程分上下篇
+[（上）Vue+Echarts构建可视化大数据平台实战项目分享](https://juejin.cn/post/6844904158181457933)
+[（下）Vue+Echarts构建大数据可视化酷炫展示公司品牌实战项目分享](https://juejin.cn/post/6845166890449371149)
 
 # 效果截图
 

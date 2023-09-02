@@ -16,14 +16,14 @@
     "vuex": "^3.2.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.3.0",
-    "@vue/cli-plugin-eslint": "^4.3.0",
-    "@vue/cli-service": "^4.3.0",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.13.1",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^13.2.0",
     "vue-count-to": "^1.0.13",
     "vue-particles": "^1.0.9",
     "vue-template-compiler": "^2.6.11"

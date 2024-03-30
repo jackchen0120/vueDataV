@@ -1,0 +1,103 @@
+@charset "utf-8";
+/*
+ *  描述: 基本样式
+ *  作者：Jack Chen
+ *  时间：2020-04-18
+ */
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+} 
+ol, ul, li {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+address, caption, cite, code, dfn, em, strong, th, var, optgroup { 
+  font-style: normal; 
+  font-weight: normal;
+}
+fieldset, img { 
+  border:0;
+}
+textarea { 
+  resize: none;
+}
+
+[v-cloak] {
+  display: none
+}
+
+body::-webkit-scrollbar {
+  display: none
+}
+ 
+/* custom */
+a {
+  color: #7e8c8d;
+  text-decoration: none;
+  -webkit-backface-visibility: hidden;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:vertical {
+  height: 5px;
+  background-color: rgba(125, 125, 125, 0.7);
+  -webkit-border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  width: 5px;
+  background-color: rgba(125, 125, 125, 0.7);
+  -webkit-border-radius: 6px;
+}
+html, body {
+  font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", "微软雅黑", sans-serif;
+}
+body {
+  height: 100%; 
+  width: 100%;
+  line-height: 22px;
+  font-size: 12px;
+  overflow: hidden;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html {
+  overflow-y: scroll;
+}
+ 
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: inline-block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  *zoom: 1;
+}
+ 
+/*隐藏*/
+.dn {
+  display: none;
+}
